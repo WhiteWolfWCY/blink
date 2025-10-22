@@ -1,5 +1,17 @@
+import { requireAuth } from "@/lib/auth-utils";
+import { caller } from "@/trpc/server";
+
 const Page = async () => {
-  return <div>Hello World</div>;
+  await requireAuth();
+
+
+  const data = await caller.getUsers();
+
+  return (
+    <div>
+      {JSON.stringify(data)}
+    </div>
+  );
 };
 
 export default Page;
