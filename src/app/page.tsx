@@ -1,9 +1,5 @@
-const Page = () => {
-  return (
-    <div>
-      Hello World
-    </div>
-  )
-}
+const Page = async () => {
+  return <div>Hello World</div>;
+};
 
 export default Page;
